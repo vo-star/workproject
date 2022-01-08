@@ -174,7 +174,15 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
         insertEnters2(db, "", "Побитовые операторы","");
         insertEnters2(db, "", "Побитовые операторы","A      B       A|B     A&B     A^B     ~A"
                                                                         +"\n"
-        +                                                           " 0       0         0       0         0            1");
+        +                                                           " 0       0         0       0         0            1"
+                +"\n"
+        +                                                           " 1       0         1       0         1            0"
+                +"\n"
+        +                                                           " 0       1         1       0         1            1"
+                +"\n"
+        +                                                           " 1       1         1       1         0            0"
+
+                                                            );
         insertEnters2(db, "", "Побитовые операторы","");
         insertEnters2(db, "", "Побитовые операторы","1\t0\t1\t0\t1\t0");
         insertEnters2(db, "", "Побитовые операторы","0\t1\t1\t0\t1\t1");
