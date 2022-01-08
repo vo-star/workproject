@@ -43,14 +43,71 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE COLORS (_id INTEGER PRIMARY KEY AUTOINCREMENT, COLOR TEXT); " );
         Log.i("MyLog", "After create table1");
+        //added headers
         insertEnters1(db, "Типы");
-        insertEnters1(db, "MONO-RED");
-        insertEnters1(db, "MONO-BLACK");
-        insertEnters1(db, "MONO-GREEN");
-        insertEnters1(db, "MONO-WHITE");
+        insertEnters1(db, "Побитовые операторы");
+//        insertEnters1(db, "Операторы сравнения");
+//        insertEnters1(db, "Логические операторы");
+//        insertEnters1(db, "Литералы");
+//        insertEnters1(db, "Оператор if");
+//        insertEnters1(db, "Оператор switch");
+//        insertEnters1(db, "Цикл while");
+//        insertEnters1(db, "Цикл do-while");
+//        insertEnters1(db, "Цикл for");
+//        insertEnters1(db, "Операторы перехода break, continue, return");
+//        insertEnters1(db, "Классы и объекты");
+//        insertEnters1(db, "Класс Object");
+//        insertEnters1(db, "Методы");
+//        insertEnters1(db, "Видимость. Спецификаторы доступа");
+//        insertEnters1(db, "Ключевое слово static");
+//        insertEnters1(db, "Вложенные и внутренние классы");
+//        insertEnters1(db, "Конструктор");
+//        insertEnters1(db, "Шаблон Builder");
+//        insertEnters1(db, "Шаблон Singleton");
+//        insertEnters1(db, "Наследование");
+//        insertEnters1(db, "Абстрактные классы и методы");
+//        insertEnters1(db, "Пакеты");
+//        insertEnters1(db, "Интерфейсы");
+//        insertEnters1(db, "Слушатели");
+//        insertEnters1(db, "Исключения");
+//        insertEnters1(db, "Потоки. Класс Thread и интерфейс Runnable");
+//        insertEnters1(db, "Перечисления enum");
+//        insertEnters1(db, "Обобщения (Generic)");
+//        insertEnters1(db, "Рекурсия");
+//        insertEnters1(db, "Класс String");
+//        insertEnters1(db, "Класс Scanner");
+//        insertEnters1(db, "Класс Math");
+//        insertEnters1(db, "Классы Date, Calendar, DateFormat");
+//        insertEnters1(db, "Класс Currency");
+//        insertEnters1(db, "Locale");
+//        insertEnters1(db, "Массивы");
+//        insertEnters1(db, "Stack");
+//        insertEnters1(db, "Коллекции");
+//        insertEnters1(db, " ArrayList");
+//        insertEnters1(db, " LinkedList");
+//        insertEnters1(db, "Множества: Set, HashSet, LinkedHashSet, TreeSet");
+//        insertEnters1(db, "Map (Отображение)");
+//        insertEnters1(db, "HashMap");
+//        insertEnters1(db, " LinkedHashMap");
+//        insertEnters1(db, "  ArrayMap и SparseArray");
+//        insertEnters1(db, "Интерфейс Comparable");
+//        insertEnters1(db, "Интерфейс Comparator");
+//        insertEnters1(db, "Система ввода/вывода");
+//        insertEnters1(db, " Класс File");
+//        insertEnters1(db, "  Класс InputStream");
+//        insertEnters1(db, " Класс PrintStream");
+//        insertEnters1(db, "Классы NIO");
+//        insertEnters1(db, "Random");
+//        insertEnters1(db, "Таймер - классы Timer и TimerTask");
+//        insertEnters1(db, "Обработка событий");
+//        insertEnters1(db, "Регулярные выражения");
         Log.i("MyLog", "After insert1");
         db.execSQL("CREATE TABLE DECK_COLORS (_id INTEGER PRIMARY KEY AUTOINCREMENT, TYPE TEXT, COLOR TEXT, COM TEXT); " );
         Log.i("MyLog", "After create table2");
+
+
+        //added note
+
         insertEnters2(db, "", "Типы", "Примитивные типы Java не являются объектами. К ним относятся:");
         insertEnters2(db," ", "Типы"," boolean - булев тип, может иметь значения true или false");
         insertEnters2(db," ", "Типы","byte - 8-разрядное целое число");
@@ -84,14 +141,113 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
                 + " Класс Byte является оболочкой для данного типа. Без необходимости не используйте в Android класс Byte. "
                 + " Слово «байт» (byte) возникло в компании IBM примерно в 1956 году. Оно произошло от слова bite («кусок»), но его было решено писать через букву y, чтобы не путать со словом «bit» («бит»). В течение некоторого времени слово «байт» обозначало просто число битов в конкретном потоке данных. Однако в середине 1960-х, в связи с разработкой семейства компьютеров System/360 в компании IBM, это слово стало обозначать группу из восьми бит. "
                 + " Любопытно, что bite имеет также значение 'укус' (сущ.) или 'укусить' (глагол). Таким образом это наш родной 'Кусь!'");
-        insertEnters2(db, "AGGRO", "MONO-RED","");
-        insertEnters2(db, "CAVALCADE","MONO-RED","");
-        insertEnters2(db, "VAMPIRES", "MONO-BLACK","");
-        insertEnters2(db, "DISCARD","MONO-BLACK","");
-        insertEnters2(db, "NISSA", "MONO-GREEN","");
-        insertEnters2(db, "FOOD","MONO-GREEN","");
-        insertEnters2(db, "LIFE", "MONO-WHITE","");
-        insertEnters2(db, "WEENIE","MONO-WHITE","");
+
+
+
+
+
+        insertEnters2(db, "", "Побитовые операторы","Существует несколько побитовых операторов, применимых к целочисленными типам long, int, short, char, byte.");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы", "~\tПобитовый унарный оператор NOT");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","&\tПобитовый AND");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","&=\tПобитовый AND с присваиванием");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","|\tПобитовый OR");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","|=\tПобитовый OR с присваиванием");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","^\tПобитовый исключающее OR");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","^=\tПобитовый исключающее OR с присваиванием");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы",">>\tСдвиг вправо");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы",">>=\tСдвиг вправо с присваиванием");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы",">>>\tСдвиг вправо с заполнением нулями");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","<<\tСдвиг влево");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы","<<=\tСдвиг влево с присваиванием");
+        insertEnters2(db, "", "Побитовые операторы","");
+        insertEnters2(db, "", "Побитовые операторы",">>>=\tСдвиг вправо с заполнением нулями с присваиванием");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+//        insertEnters2(db, "", "Побитовые операторы","");
+
+//
+//
+//
+//
+//
+//
+//        insertEnters2(db, "CAVALCADE","MONO-RED","");
+//
+//
+//
+//
+//
+//
+//        insertEnters2(db, "VAMPIRES", "MONO-BLACK","");
+//
+//
+//
+//
+//
+//        insertEnters2(db, "DISCARD","MONO-BLACK","");
+//
+//
+//
+//
+//
+//
+//        insertEnters2(db, "NISSA", "MONO-GREEN","");
+//
+//
+//
+//
+//
+//        insertEnters2(db, "FOOD","MONO-GREEN","");
+//
+//
+//
+//
+//
+//        insertEnters2(db, "LIFE", "MONO-WHITE","");
+//
+//
+//
+//
+//
+//        insertEnters2(db, "WEENIE","MONO-WHITE","");
+//
+//
+//
+//
+
+
+
         Log.i("MyLog", "After insert2");
         db.execSQL("CREATE TABLE CARDS (_id INTEGER PRIMARY KEY AUTOINCREMENT,COLOR TEXT ,TYPE TEXT , CARD TEXT, RESURSID INTEGER, SIGN INTEGER); " );
         insertEnters3(db, "MONO-BLUE","MILS" , "4 Мерфолк, Хранительница Тайн", R.drawable.merfolk, 0);
