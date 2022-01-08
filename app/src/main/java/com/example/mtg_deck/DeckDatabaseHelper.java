@@ -183,10 +183,6 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
         +                                                           " 1       1         1       1         0            0"
 
                                                             );
-        insertEnters2(db, "", "Побитовые операторы","");
-        insertEnters2(db, "", "Побитовые операторы","1\t0\t1\t0\t1\t0");
-        insertEnters2(db, "", "Побитовые операторы","0\t1\t1\t0\t1\t1");
-        insertEnters2(db, "", "Побитовые операторы","1\t1\t1\t1\t0\t0");
 //        insertEnters2(db, "", "Побитовые операторы","");
 //        insertEnters2(db, "", "Побитовые операторы","");
 //        insertEnters2(db, "", "Побитовые операторы","");
