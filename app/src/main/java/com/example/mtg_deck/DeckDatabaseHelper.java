@@ -43,7 +43,7 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE COLORS (_id INTEGER PRIMARY KEY AUTOINCREMENT, COLOR TEXT); " );
         Log.i("MyLog", "After create table1");
-        insertEnters1(db, "MONO-BLUE");
+        insertEnters1(db, "Типы");
         insertEnters1(db, "MONO-RED");
         insertEnters1(db, "MONO-BLACK");
         insertEnters1(db, "MONO-GREEN");
@@ -51,8 +51,34 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
         Log.i("MyLog", "After insert1");
         db.execSQL("CREATE TABLE DECK_COLORS (_id INTEGER PRIMARY KEY AUTOINCREMENT, TYPE TEXT, COLOR TEXT, COM TEXT); " );
         Log.i("MyLog", "After create table2");
-        insertEnters2(db, "MILS", "MONO-BLUE", "Собирается");
-        insertEnters2(db, "FLASH","MONO-BLUE","");
+        insertEnters2(db, "", "MONO-BLUE", "Примитивные типы Java не являются объектами. К ним относятся:"
+
+        +" boolean - булев тип, может иметь значения true или false"
+       + " byte - 8-разрядное целое число"
+        +" short - 16-разрядное целое число"
+        +" int - 32-разрядное целое число"
+        +" long - 64-разрядное целое число"
+        +" char - 16-разрядное беззнаковое целое, представляющее собой символ UTF-16 (буквы и цифры)"
+        +"float - 32-разрядное число в формате IEEE 754 с плавающей точкой"
+        +" double - 64-разрядное число в формате IEEE 754 с плавающей точкой"
+        +" Примитивный в данном случае не оскорбление, а просто даёт понять, что речь идёт о простом типе, который не умеет прыгать, спать или мяукать. Да что он вообще умеет? Ой, всё."
+         +       " Java определяет четыре целочисленных типа: byte, short, int, long. Они могут быть положительными и отрицательными (Java не поддерживает только положительные значения без знака, как некоторые языки программирования)."
+          +      " Тип byte "
+        +" Наименьший по размеру целочисленный тип - byte. Это 8-битовый тип с диапазоном допустимых значений от -128 до 127. Переменные типа byte часто используются при работе с потоком данных из сети или файла, а также при работе с необработанными двоичными данными или в массивах для экономии памяти. "
+
+         +       " Объявить переменную типа byte можно следующим образом: "
+
+
+        +" byte c, a, t; // объявили сразу три переменные "
+        +" В арифметических выражениях с переменными типа byte вычисления выполняются как с типом int, т.е. с помощью 32-битовой арифметики, а полученный результат будет 32-битовым. Смотри пример с short."
+
+         +       " Строку с числом перевести в данный тип можно через метод parseByte(String): "
+        +" byte x = Byte.parseByte('100'); "
+        +" Класс Byte является оболочкой для данного типа. Без необходимости не используйте в Android класс Byte. "
+
+        +" Слово «байт» (byte) возникло в компании IBM примерно в 1956 году. Оно произошло от слова bite («кусок»), но его было решено писать через букву y, чтобы не путать со словом «bit» («бит»). В течение некоторого времени слово «байт» обозначало просто число битов в конкретном потоке данных. Однако в середине 1960-х, в связи с разработкой семейства компьютеров System/360 в компании IBM, это слово стало обозначать группу из восьми бит. "
+
+                +" Любопытно, что bite имеет также значение 'укус' (сущ.) или 'укусить' (глагол). Таким образом это наш родной 'Кусь!'");
         insertEnters2(db, "AGGRO", "MONO-RED","");
         insertEnters2(db, "CAVALCADE","MONO-RED","");
         insertEnters2(db, "VAMPIRES", "MONO-BLACK","");
@@ -80,5 +106,10 @@ public class DeckDatabaseHelper extends SQLiteOpenHelper {
         insertEnters3(db, "MONO-BLUE", "MILS", "Доп. колода:",  0 ,1);
         insertEnters3(db, "MONO-BLUE", "MILS", "3 Такой Крохотный",  R.drawable.sid1 ,0);
     }
-    
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
 }
