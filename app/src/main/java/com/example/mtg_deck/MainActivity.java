@@ -75,16 +75,6 @@ public class MainActivity extends AppCompatActivity {
         db.close();
     }
 
-    public void onClick(View view){
-        Intent intent = new Intent(MainActivity.this,
-                Info.class);
-        startActivity(intent);
-    }
-    public void onClick2(View view){
-        Intent intent = new Intent(MainActivity.this,
-                News.class);
-        startActivity(intent);
-    }
 }
 
 

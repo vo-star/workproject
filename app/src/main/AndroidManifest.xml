@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Photo"></activity>
-        <activity android:name=".Description_Deck_Blue" />
-        <activity android:name=".News" />
-        <activity android:name=".Info" />
         <activity android:name=".Decks" />
         <activity android:name=".MainActivity">
             <intent-filter>

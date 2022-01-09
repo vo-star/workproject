@@ -78,41 +78,41 @@ public class Decks extends AppCompatActivity {
             toast.show();
         }
         //Создание слушателя
-        AdapterView.OnItemClickListener itemClickListener =
-                new AdapterView.OnItemClickListener(){
-                    public void onItemClick(AdapterView<?> listDrinks,
-                                            View itemView,
-                                            int position,
-                                            long id) {
-                        //Напиток, выбранный пользователем, передается DrinkActivity
-                        Intent intent = new Intent(Decks.this,
-                                Description_Deck_Blue.class);
-                        intent.putExtra(Description_Deck_Blue.EXTRA_DECKBLUEID, (int) id);
-                        startActivity(intent);
-                    }
-                };
-        //Слушатель связывается со списковым представлением
-        listDrinks.setOnItemClickListener(itemClickListener);
+//        AdapterView.OnItemClickListener itemClickListener =
+//                new AdapterView.OnItemClickListener(){
+//                    public void onItemClick(AdapterView<?> listDrinks,
+//                                            View itemView,
+//                                            int position,
+//                                            long id) {
+//                        //Напиток, выбранный пользователем, передается DrinkActivity
+//                        Intent intent = new Intent(Decks.this,
+//                                Description_Deck_Blue.class);
+//                        intent.putExtra(Description_Deck_Blue.EXTRA_DECKBLUEID, (int) id);
+//                        startActivity(intent);
+//                    }
+//                };
+//        //Слушатель связывается со списковым представлением
+//        listDrinks.setOnItemClickListener(itemClickListener);
     }
-    public static String getCeckBox(){
-        String cek = bludeckCursor.getString(4);
-        return cek;
-    }
-    public static String getType() {
-        String color_type = bludeckCursor.getString(1);
-        return color_type;
-    }
+//    public static String getCeckBox(){
+//        String cek = bludeckCursor.getString(4);
+//        return cek;
+//    }
+//    public static String getType() {
+//        String color_type = bludeckCursor.getString(1);
+//        return color_type;
+//    }
 //    @Override
 ////    public void onDestroy(){
 ////        super.onDestroy();
 ////        bludeckCursor.close();
 ////        db.close();
 ////    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        bludeckCursor.close();
-        db.close();
-    }
+//    @Override
+//    public void onDestroy(){
+//        super.onDestroy();
+//        bludeckCursor.close();
+//        db.close();
+//    }
 
 }
