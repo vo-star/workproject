@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
-import static android.R.layout.simple_list_item_1;
 
 public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase db;
@@ -52,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                                             long id) {
                         //Напиток, выбранный пользователем, передается DrinkActivity
                         Intent intent = new Intent(MainActivity.this,
-                                Decks.class);
-                        intent.putExtra(Decks.EXTRA_DECKSID, (int) id);
+                                Themes.class);
+                        intent.putExtra(Themes.EXTRA_DECKSID, (int) id);
                         startActivity(intent);
                     }
 
