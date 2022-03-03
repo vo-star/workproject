@@ -24,20 +24,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listDrinks = (ListView) findViewById(R.id.list_color_deck);
-        SQLiteOpenHelper deckDatabaseHelper = new DeckDatabaseHelper(this);
+        ListView themelist = (ListView) findViewById(R.id.list_theme);
+        SQLiteOpenHelper deckDatabaseHelper = new ThemeDatabaseHelper(this);
         try {
             db = deckDatabaseHelper.getReadableDatabase();
-            colorCursor = db.query("COLORS",
-                    new String[]{"_id", "COLOR"},
+            colorCursor = db.query("THEME",
+                    new String[]{"_id", "THEME"},
                     null, null, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     colorCursor,
-                    new String[]{"COLOR"},
+                    new String[]{"THEME"},
                     new int[]{android.R.id.text1},
                     0);
-            listDrinks.setAdapter(listAdapter);
+            themelist.setAdapter(listAdapter);
         } catch(SQLiteException e) {
 
         }
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 };
 
         //Слушатель связывается со списковым представлением
-        listDrinks.setOnItemClickListener(itemClickListener);
+        themelist.setOnItemClickListener(itemClickListener);
 
     }
 

@@ -21,17 +21,17 @@ public class Themes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck__blue);
         ListView Themelist = (ListView) findViewById(R.id.theme_list);
-        SQLiteOpenHelper themeDatabaseHelper = new DeckDatabaseHelper(this);
+        SQLiteOpenHelper themeDatabaseHelper = new ThemeDatabaseHelper(this);
         String nameColor = MainActivity.getColor();
         try {
             db = themeDatabaseHelper.getReadableDatabase();
-            ThemeCursor = db.query("DECK_COLORS",
-                    new String[]{"_id", "TYPE", "COLOR", "COM", "TYPE||' '||COM"},
+            ThemeCursor = db.query("TEXT_THEME",
+                    new String[]{"_id", "TAB", "THEME", "TEXT", "TAB||' '||TEXT"},
                     "COLOR = ?", new String[]{nameColor}, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     ThemeCursor,
-                    new String[]{"TYPE||' '||COM"},
+                    new String[]{"TAB||' '||TEXT"},
                     new int[]{android.R.id.text1},
                     0);
             Themelist.setAdapter(listAdapter);

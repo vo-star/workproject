@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.318">
 
         <ListView
-            android:id="@+id/list_color_deck"
+            android:id="@+id/list_theme"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
     </LinearLayout>

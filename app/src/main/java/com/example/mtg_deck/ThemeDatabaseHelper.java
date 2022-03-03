@@ -7,19 +7,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
-public class DeckDatabaseHelper extends SQLiteOpenHelper {
+public class ThemeDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "theme"; // the name of our database
     private static final int DB_VERSION = 2; // the version of the database
 
-    DeckDatabaseHelper(Context context) {
+    ThemeDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     private static void insertEnters1(SQLiteDatabase db, String theme) {
         ContentValues themeEnters = new ContentValues();
         themeEnters.put("THEME", theme);
-        db.insert("COLORS", null, themeEnters);
+        db.insert("THEMETEXT", null, themeEnters);
     }
 
     private static void insertEnters2(SQLiteDatabase db, String tab, String theme, String text) {
