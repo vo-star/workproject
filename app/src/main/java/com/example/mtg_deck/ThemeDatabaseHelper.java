@@ -33,7 +33,7 @@ public class ThemeDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE COLORS (_id INTEGER PRIMARY KEY AUTOINCREMENT, COLOR TEXT); ");
+        db.execSQL("CREATE TABLE THEMETEXT (_id INTEGER PRIMARY KEY AUTOINCREMENT, THEME TEXT); ");
         Log.i("MyLog", "After create table1");
         //added headers
         insertEnters1(db, "Типы");
@@ -94,7 +94,7 @@ public class ThemeDatabaseHelper extends SQLiteOpenHelper {
 //        insertEnters1(db, "Обработка событий");
 //        insertEnters1(db, "Регулярные выражения");
         Log.i("MyLog", "After insert1");
-        db.execSQL("CREATE TABLE TEXT_THёEME (_id INTEGER PRIMARY KEY AUTOINCREMENT, TYPE TEXT, COLOR TEXT, COM TEXT); ");
+        db.execSQL("CREATE TABLE TEXT_THEME (_id INTEGER PRIMARY KEY AUTOINCREMENT, TAB TEXT, THEME TEXT, TEXT TEXT); ");
         Log.i("MyLog", "After create table2");
 
 

@@ -15,7 +15,7 @@ import android.widget.SimpleCursorAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase db;
-    public static Cursor colorCursor;
+    public static Cursor themeCursor;
 
 
 
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
         SQLiteOpenHelper deckDatabaseHelper = new ThemeDatabaseHelper(this);
         try {
             db = deckDatabaseHelper.getReadableDatabase();
-            colorCursor = db.query("THEME",
+            themeCursor = db.query("THEMETEXT",
                     new String[]{"_id", "THEME"},
                     null, null, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
-                    colorCursor,
+                    themeCursor,
                     new String[]{"THEME"},
                     new int[]{android.R.id.text1},
                     0);
@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static String getColor(){
-         String color_name = colorCursor.getString(1);
+    public static String getText(){
+         String color_name = themeCursor.getString(1);
          return color_name;
     }
     @Override
     public void onDestroy(){
         super.onDestroy();
-        colorCursor.close();
+        themeCursor.close();
         db.close();
     }
 
